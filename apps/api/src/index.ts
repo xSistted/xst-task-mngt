@@ -1,9 +1,16 @@
 import { Elysia } from "elysia";
 import { cors } from "@elysiajs/cors";
+import { openapi } from "@elysiajs/openapi";
 import { TaskModule } from "./modules/service";
 
 const app = new Elysia()
-  .use(cors()) // Allow frontend to talk to backend
+  .use(cors({
+    origin: true,
+    credentials: true
+  }))
+  .use(openapi({
+    path:"/docs"
+  }))
   .get("/", () => "Hello from Elysia Backend!")
   .get("/ping", () => ({ status: "ok", message: "pong" }))
   .use(TaskModule)
