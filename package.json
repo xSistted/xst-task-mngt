@@ -1,0 +1,11 @@
+{
+  "name": "xst-task-mngt",
+  "module": "index.ts",
+  "type": "module",
+  "workspaces": [
+    "apps/*"
+  ],
+  "devDependencies": {
+    "bun-types": "latest"
+  }
+}

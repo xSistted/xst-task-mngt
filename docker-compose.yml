@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: xst-db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: xst_db
+    ports:
+      - '5432:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - xst-network
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: xst-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - '5050:80'
+    networks:
+      - xst-network
+
+volumes:
+  db-data:
+
+networks:
+  xst-network:
