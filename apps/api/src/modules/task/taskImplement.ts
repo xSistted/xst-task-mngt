@@ -1,6 +1,7 @@
 import { Elysia, t } from "elysia";
 import { db } from "../../db";
 import { tasks } from "../../db/schema";
+import { eq } from "drizzle-orm";
 
 const TaskModule = new Elysia({prefix: '/tasks', tags: ['tasks']})
     .get('/', async() => {
@@ -16,6 +17,13 @@ const TaskModule = new Elysia({prefix: '/tasks', tags: ['tasks']})
             isCompleted: t.Boolean({ default: false }),
             priority: t.String({ default: "medium" })
         })
+    })
+    .delete('/delete/:id', async({ params }) => {
+        const deletedTask = await db.delete(tasks).where(eq(tasks.id, params.id)).returning();
+        if (deletedTask == null) {
+            return { message: "Task not found" };
+        }
+        return { message: "Task deleted successfully" };
     })
 
 export { TaskModule };
