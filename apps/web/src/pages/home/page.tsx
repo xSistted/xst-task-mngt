@@ -9,13 +9,13 @@ function Home() {
                     <div className="text-center space-y-8">
                         {/* Main Title */}
                         <div className="relative">
-                            <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400 bg-clip-text text-transparent">
-                                NaCl : Task MNGT
+                            <h1 className="text-8xl font-bold leading-tight bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400 bg-clip-text text-transparent py-2">
+                                XST : Task Management
                             </h1>
                         </div>
 
                         {/* Subtitle */}
-                        <p className="text-2xl md:text-3xl text-blue-400 font-bold">
+                        <p className="text-4xl text-blue-400 font-bold">
                             Manage tasks with your teamate!
                         </p>
                     {/* 3 Card Section */}
