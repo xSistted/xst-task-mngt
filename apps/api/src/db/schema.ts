@@ -7,3 +7,11 @@ export const tasks = pgTable('tasks', {
   priority: text('priority').default('medium'),
   createdAt: timestamp('created_at').defaultNow(),
 });
+
+export const users = pgTable('users', {
+  studentID: text('student_id').primaryKey(),
+  name: text('name').notNull(),
+  email: text('email').notNull().unique(),
+  picture: text('picture'),
+  createdAt: timestamp('created_at').defaultNow(),
+});

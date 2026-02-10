@@ -4,66 +4,105 @@ function Home() {
     return (
         <>
             <Navbar />
-            <div className="min-h-screen bg-gradient-to-br from blue-100 via-cyan-100 to-cyan-200">
-                <div className="container mx-auto px-4 py-12">
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-100">
+                <div className="container mx-auto px-4 py-16">
                     <div className="text-center space-y-8">
                         {/* Main Title */}
-                        <div className="relative">
-                            <h1 className="text-8xl font-bold leading-tight bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400 bg-clip-text text-transparent py-2">
-                                XST : Task Management
+                        <div className="relative animate-fade-in">
+                            <h1 className="text-7xl md:text-8xl font-extrabold leading-tight bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400 bg-clip-text text-transparent py-4 drop-shadow-sm">
+                                NaCl : Task Management
                             </h1>
                         </div>
 
                         {/* Subtitle */}
-                        <p className="text-4xl text-blue-400 font-bold">
-                            Manage tasks with your teamate!
+                        <p className="text-2xl md:text-3xl text-gray-700 font-semibold animate-slide-up">
+                            Manage tasks with your teammates!
                         </p>
+                        
                         {/* 3 Card Section */}
-                        <div className="flex justify-evenly mt-16 space-x-8">
-                            <div className="bg-gray-200 block max-w-sm p-6 border border-default rounded-4xl shadow-md">
-                                <a href="#">
-                                    <img className="rounded-base" src="/docs/images/blog/image-1.jpg" alt="" />
-                                </a>
-                                <h5 className="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading">Planning</h5>
-                                <ul className="mb-6">
-                                    <li>Align tasks with project goals</li>
-                                    <li>Break down tasks into manageable steps</li>
-                                    <li>Set clear priorities and deadlines</li>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-7xl mx-auto">
+                            {/* Planning Card */}
+                            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-blue-100">
+                                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                    </svg>
+                                </div>
+                                <h5 className="mb-4 text-2xl font-bold text-gray-800">Planning</h5>
+                                <ul className="space-y-3 text-gray-600">
+                                    <li className="flex items-start">
+                                        <span className="text-cyan-500 mr-2">✓</span>
+                                        <span>Align tasks with project goals</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="text-cyan-500 mr-2">✓</span>
+                                        <span>Break down tasks into manageable steps</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="text-cyan-500 mr-2">✓</span>
+                                        <span>Set clear priorities and deadlines</span>
+                                    </li>
                                 </ul>
                             </div>
-                            <div className="bg-gray-200 block max-w-sm p-6 border border-default rounded-4xl shadow-md">
-                                <a href="#">
-                                    <img className="rounded-base" src="/docs/images/blog/image-1.jpg" alt="" />
-                                </a>
-                                <h5 className="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading">Tracking</h5>
-                                <ul className="mb-6">
-                                    <li>Track your works, your way</li>
-                                    <li>Manage risks and dependencies</li>
-                                    <li>Analyze progress and performance</li>
+
+                            {/* Tracking Card */}
+                            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-cyan-100">
+                                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-cyan-500 to-blue-400 rounded-xl flex items-center justify-center">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                    </svg>
+                                </div>
+                                <h5 className="mb-4 text-2xl font-bold text-gray-800">Tracking</h5>
+                                <ul className="space-y-3 text-gray-600">
+                                    <li className="flex items-start">
+                                        <span className="text-cyan-500 mr-2">✓</span>
+                                        <span>Track your works, your way</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="text-cyan-500 mr-2">✓</span>
+                                        <span>Manage risks and dependencies</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="text-cyan-500 mr-2">✓</span>
+                                        <span>Analyze progress and performance</span>
+                                    </li>
                                 </ul>
                             </div>
-                            <div className="bg-gray-200 block max-w-sm p-6 border border-default rounded-4xl shadow-md">
-                                <a href="#">
-                                    <img className="rounded-base" src="/docs/images/blog/image-1.jpg" alt="" />
-                                </a>
-                                <h5 className="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading">Collaborate</h5>
-                                <ul className="mb-6">
-                                    <li>Automate workflows and notifications</li>
-                                    <li>Facilitate real-time communication</li>
-                                    <li>Share files and resources securely</li>
+
+                            {/* Collaborate Card */}
+                            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-blue-100">
+                                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-xl flex items-center justify-center">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                </div>
+                                <h5 className="mb-4 text-2xl font-bold text-gray-800">Collaborate</h5>
+                                <ul className="space-y-3 text-gray-600">
+                                    <li className="flex items-start">
+                                        <span className="text-cyan-500 mr-2">✓</span>
+                                        <span>Automate workflows and notifications</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="text-cyan-500 mr-2">✓</span>
+                                        <span>Facilitate real-time communication</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="text-cyan-500 mr-2">✓</span>
+                                        <span>Share files and resources securely</span>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    {/* Get Start Button */}
-                    <div className="text-center mt-12">
-                        <span className="relative cursor-pointer">
-                            <button>
-                                <a href="">
-                                    Get Start!!!
-                                </a>
-                            </button>
-                        </span>
+                    
+                    {/* Get Started Button */}
+                    <div className="text-center mt-16">
+                        <a 
+                            href="/dashboard" 
+                            className="inline-block px-10 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 hover:from-blue-700 hover:to-cyan-600"
+                        >
+                            Get Started!
+                        </a>
                     </div>
                 </div>
             </div>

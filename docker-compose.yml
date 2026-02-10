@@ -25,6 +25,24 @@ services:
     networks:
       - xst-network
 
+  api:
+    build:
+      context: ./apps/api
+    container_name: xst-api
+    ports:
+      - "3000:3000"
+    networks:
+      - xst-network
+
+  web:
+    build:
+      context: ./apps/web
+    container_name: xst-web
+    ports:
+      - "5173:5173"
+    networks:
+      - xst-network
+
 volumes:
   db-data:
 

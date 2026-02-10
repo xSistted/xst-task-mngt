@@ -1,7 +1,7 @@
 import { Elysia } from "elysia";
 import { cors } from "@elysiajs/cors";
 import { openapi } from "@elysiajs/openapi";
-import { TaskModule } from "./modules/service";
+import { TaskModule, LoginModule } from "./modules/service";
 
 const app = new Elysia()
   .use(cors({
@@ -12,9 +12,9 @@ const app = new Elysia()
     path:"/docs"
   }))
   .get("/", () => "Hello from Elysia Backend!")
-  .get("/ping", () => ({ status: "ok", message: "pong" }))
+  .use(LoginModule)
   .use(TaskModule)
-  
+
   .listen(3000);
 
 // Export the type of the app for Eden Treaty
